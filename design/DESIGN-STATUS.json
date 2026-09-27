@@ -1,0 +1,53 @@
+{
+  "game": "walker-audio-rhythm-game",
+  "mode": "recovered",
+  "revision": 1,
+  "design_version": "0.1.0-recovered",
+  "date": "2026-09-27",
+  "recovered_from": {
+    "path": "godot/",
+    "engine_detected": "Godot 4.7 (features); 4.7.2.stable per FRICTIONAL.md (gl_compatibility)",
+    "pass": "/gdd reverse --path godot silent"
+  },
+  "engine": {
+    "name": "godot",
+    "version": "4.7 (features); 4.7.2.stable per FRICTIONAL.md",
+    "renderer": "gl_compatibility"
+  },
+  "gates": {
+    "vision": {
+      "signed_by": null,
+      "date": null,
+      "revision": null
+    },
+    "systems": {
+      "signed_by": null,
+      "date": null,
+      "revision": null
+    },
+    "world": {
+      "signed_by": null,
+      "date": null,
+      "revision": null
+    },
+    "scope": {
+      "signed_by": null,
+      "date": null,
+      "revision": null
+    }
+  },
+  "gate_note": "gate — unsigned at time of writing",
+  "missing_count": 14,
+  "edu_track": false,
+  "human_playtests": 0,
+  "notes": "Silent recovered pass. A small one-button game. GAME-BRIEF.md (root) is an unsigned working brief, read not modified. Nothing here is approved. Gates are signed by humans only.",
+  "kind": "game",
+  "brief": "../GAME-BRIEF.md (unsigned, not Zelda-owned)",
+  "core_percentage": {
+    "core": null,
+    "total": 11,
+    "percent": null,
+    "over_limit": null,
+    "decision": "Q-04 open"
+  }
+}

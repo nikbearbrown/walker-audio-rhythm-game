@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="620" viewBox="0 0 1400 620" role="img" aria-labelledby="t d">
+<title id="t">Judgment windows · M-02</title>
+<desc id="d">Signed error in ms (press time minus note time). Solid bands are observed in note_manager.gd:9-11, 68-126. The dashed late-miss band exists in code but is effectively unreachable because notes auto-miss after +150 ms. IDs: M-01, M-02, F-01, Q-06.</desc>
+<rect width="1400" height="620" fill="#f7f8fa"/>
+<g font-family="Helvetica, Arial, sans-serif" fill="#1f2a37">
+<text x="40" y="48" font-size="28" font-weight="700">Judgment windows · M-02</text>
+<text x="40" y="76" font-size="15" fill="#5b6b7c">Signed error = press time − note time (ms). Constants 50 / 150 / 300 ms, note_manager.gd:9-11.</text>
+<text x="40" y="98" font-size="13" fill="#5b6b7c">IDs: M-01, M-02, F-01, Q-06</text>
+<rect x="120.0" y="170" width="116.0" height="170" fill="#e9eef3" stroke="#2f6f9f" stroke-width="1.5"/>
+<text x="178.0" y="245" font-size="16" font-weight="700" text-anchor="middle">ignored</text>
+<rect x="236.0" y="170" width="248.6" height="170" fill="#f3d9d5" stroke="#2f6f9f" stroke-width="1.5"/>
+<text x="360.3" y="245" font-size="16" font-weight="700" text-anchor="middle">Miss (early)</text>
+<text x="360.3" y="265" font-size="16" font-weight="700" text-anchor="middle">consumes note</text>
+<rect x="484.6" y="170" width="165.7" height="170" fill="#d7e8f4" stroke="#2f6f9f" stroke-width="1.5"/>
+<text x="567.4" y="245" font-size="16" font-weight="700" text-anchor="middle">Good</text>
+<text x="567.4" y="265" font-size="16" font-weight="700" text-anchor="middle">(early)</text>
+<rect x="650.3" y="170" width="165.7" height="170" fill="#fdf1c7" stroke="#2f6f9f" stroke-width="1.5"/>
+<text x="733.1" y="245" font-size="16" font-weight="700" text-anchor="middle">Perfect</text>
+<rect x="816.0" y="170" width="165.7" height="170" fill="#d7e8f4" stroke="#2f6f9f" stroke-width="1.5"/>
+<text x="898.9" y="245" font-size="16" font-weight="700" text-anchor="middle">Good</text>
+<text x="898.9" y="265" font-size="16" font-weight="700" text-anchor="middle">(late)</text>
+<rect x="981.7" y="170" width="248.6" height="170" fill="#fdf3f1" stroke="#b5483a" stroke-width="2" stroke-dasharray="9 7"/>
+<text x="1106.0" y="235" font-size="14" text-anchor="middle" fill="#b5483a">Miss (late) on press</text>
+<text x="1106.0" y="255" font-size="14" text-anchor="middle" fill="#b5483a">unreachable: note already</text>
+<text x="1106.0" y="275" font-size="14" text-anchor="middle" fill="#b5483a">auto-missed at +150 ms</text>
+<rect x="1230.3" y="170" width="49.7" height="170" fill="#e9eef3" stroke="#2f6f9f" stroke-width="1.5"/>
+<line x1="120" y1="370" x2="1280" y2="370" stroke="#1f2a37" stroke-width="2"/>
+<line x1="236.0" y1="362" x2="236.0" y2="378" stroke="#1f2a37" stroke-width="2"/>
+<text x="236.0" y="400" font-size="15" text-anchor="middle">-300</text>
+<line x1="484.6" y1="362" x2="484.6" y2="378" stroke="#1f2a37" stroke-width="2"/>
+<text x="484.6" y="400" font-size="15" text-anchor="middle">-150</text>
+<line x1="650.3" y1="362" x2="650.3" y2="378" stroke="#1f2a37" stroke-width="2"/>
+<text x="650.3" y="400" font-size="15" text-anchor="middle">-50</text>
+<line x1="733.1" y1="362" x2="733.1" y2="378" stroke="#1f2a37" stroke-width="2"/>
+<text x="733.1" y="400" font-size="15" text-anchor="middle">0</text>
+<line x1="816.0" y1="362" x2="816.0" y2="378" stroke="#1f2a37" stroke-width="2"/>
+<text x="816.0" y="400" font-size="15" text-anchor="middle">+50</text>
+<line x1="981.7" y1="362" x2="981.7" y2="378" stroke="#1f2a37" stroke-width="2"/>
+<text x="981.7" y="400" font-size="15" text-anchor="middle">+150</text>
+<line x1="1230.3" y1="362" x2="1230.3" y2="378" stroke="#1f2a37" stroke-width="2"/>
+<text x="1230.3" y="400" font-size="15" text-anchor="middle">+300</text>
+<text x="178.0" y="440" font-size="14" text-anchor="middle" fill="#5b6b7c">early ←</text>
+<text x="1255.1" y="440" font-size="14" text-anchor="middle" fill="#5b6b7c">→ late</text>
+<line x1="981.7" y1="150" x2="981.7" y2="360" stroke="#2f6f9f" stroke-width="3"/>
+<text x="989.7" y="150" font-size="13" fill="#2f6f9f">auto-miss line, _miss_old_notes() runs before input · 68-82</text>
+<text x="40" y="500" font-size="14" fill="#5b6b7c">Verified with a constructed fixture (FRICTIONAL 04:16): 0 and ±50 ms Perfect, ±100 ms Good, −200 ms early Miss. The +200 ms case has no test (T-20).</text>
+<text x="40" y="524" font-size="14" fill="#5b6b7c">Graph and stats: Perfect yellow, Good sky blue, Miss dark red; misses drawn just outside ±150 ms (main.gd:195-211).</text>
+<rect x="930" y="576" width="36" height="18" rx="4" fill="#fff" stroke="#2f6f9f" stroke-width="2"/><text x="974" y="590" font-size="13" fill="#5b6b7c">observed in code</text>
+<rect x="1120" y="576" width="36" height="18" rx="4" fill="#fdf3f1" stroke="#b5483a" stroke-width="2" stroke-dasharray="6 4"/><text x="1164" y="590" font-size="13" fill="#5b6b7c">proposed / unverified / missing</text>
+</g></svg>

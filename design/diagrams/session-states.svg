@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720" role="img" aria-labelledby="t d">
+<title id="t">Session states · S-05</title>
+<desc id="d">No state enum exists; these are the effective states. Solid: in code and exercised by real input in diagnostics. Dashed: behaviour no test has examined. IDs: M-05, M-06, M-07, S-05, F-04, F-05, F-06.</desc>
+<rect width="1400" height="720" fill="#f7f8fa"/>
+<defs>
+<marker id="ao" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2f6f9f"/></marker>
+<marker id="ap" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#b5483a"/></marker>
+</defs>
+<g font-family="Helvetica, Arial, sans-serif" fill="#1f2a37">
+<text x="40" y="48" font-size="28" font-weight="700">Session states · S-05</text>
+<text x="40" y="76" font-size="15" fill="#5b6b7c">No state enum exists; these are the effective states. Solid: in code and exercised by real input in diagnostics. Dashed: behaviour no test has examined.</text>
+<text x="40" y="98" font-size="13" fill="#5b6b7c">IDs: M-05, M-06, M-07, S-05, F-04, F-05, F-06</text>
+<path d="M270.0 360.0 L350.0 360.0" fill="none" stroke="#2f6f9f" stroke-width="2.2" marker-end="url(#ao)"/>
+<path d="M590.0 360.0 L700.0 360.0" fill="none" stroke="#2f6f9f" stroke-width="2.2" marker-end="url(#ao)"/>
+<text x="645.0" y="340.0" font-size="13" text-anchor="middle" fill="#5b6b7c" stroke="#f7f8fa" stroke-width="4" paint-order="stroke">play()</text>
+<path d="M838.0 315.0 Q860.0 260.0 836.0 200.0" fill="none" stroke="#2f6f9f" stroke-width="2.2" marker-end="url(#ao)"/>
+<text x="848.5" y="250.8" font-size="13" text-anchor="middle" fill="#5b6b7c" stroke="#f7f8fa" stroke-width="4" paint-order="stroke">Esc / P</text>
+<path d="M804.0 200.0 Q780.0 260.0 802.0 315.0" fill="none" stroke="#2f6f9f" stroke-width="2.2" marker-end="url(#ao)"/>
+<text x="791.5" y="250.8" font-size="13" text-anchor="middle" fill="#5b6b7c" stroke="#f7f8fa" stroke-width="4" paint-order="stroke">Esc / P</text>
+<path d="M960.0 160.0 L1080.0 160.0" fill="none" stroke="#b5483a" stroke-width="2.2" stroke-dasharray="9 7" marker-end="url(#ap)"/>
+<text x="1020.0" y="152.0" font-size="13" text-anchor="middle" fill="#5b6b7c" stroke="#f7f8fa" stroke-width="4" paint-order="stroke">on resume</text>
+<path d="M940.0 360.0 L1070.0 360.0" fill="none" stroke="#2f6f9f" stroke-width="2.2" marker-end="url(#ao)"/>
+<text x="1005.0" y="352.0" font-size="13" text-anchor="middle" fill="#5b6b7c" stroke="#f7f8fa" stroke-width="4" paint-order="stroke">song_finished</text>
+<path d="M1098.3 405.0 Q680.0 590.0 250.4 400.0" fill="none" stroke="#2f6f9f" stroke-width="2.2" marker-end="url(#ao)"/>
+<text x="680.0" y="560.0" font-size="13" text-anchor="middle" fill="#5b6b7c" stroke="#f7f8fa" stroke-width="4" paint-order="stroke">R → reload_current_scene()</text>
+<path d="M700.0 385.5 Q490.0 430.0 270.0 383.3" fill="none" stroke="#2f6f9f" stroke-width="2.2" marker-end="url(#ao)"/>
+<text x="470.0" y="432.0" font-size="13" text-anchor="middle" fill="#5b6b7c" stroke="#f7f8fa" stroke-width="4" paint-order="stroke">R (any time) · chart change</text>
+<ellipse cx="160" cy="360" rx="110.0" ry="40.0" fill="#ffffff" stroke="#2f6f9f" stroke-width="2.5"/>
+<text x="160" y="356.0" font-size="17" font-weight="700" text-anchor="middle">Scene load</text>
+<text x="160" y="376.0" font-size="12" text-anchor="middle" fill="#5b6b7c">settings → UI · main.gd:22-35</text>
+<ellipse cx="470" cy="360" rx="120.0" ry="40.0" fill="#ffffff" stroke="#2f6f9f" stroke-width="2.5"/>
+<text x="470" y="356.0" font-size="17" font-weight="700" text-anchor="middle">Count-in</text>
+<text x="470" y="376.0" font-size="12" text-anchor="middle" fill="#5b6b7c">0.5 s timer, then play() · 37-40</text>
+<ellipse cx="820" cy="360" rx="120.0" ry="45.0" fill="#ffffff" stroke="#2f6f9f" stroke-width="2.5"/>
+<text x="820" y="356.0" font-size="17" font-weight="700" text-anchor="middle">PLAYING</text>
+<text x="820" y="376.0" font-size="12" text-anchor="middle" fill="#5b6b7c">notes, judgments, graph</text>
+<ellipse cx="820" cy="160" rx="140.0" ry="40.0" fill="#ffffff" stroke="#2f6f9f" stroke-width="2.5"/>
+<text x="820" y="156.0" font-size="17" font-weight="700" text-anchor="middle">PAUSED</text>
+<text x="820" y="176.0" font-size="12" text-anchor="middle" fill="#5b6b7c">tree paused · conductor keeps time</text>
+<ellipse cx="1200" cy="360" rx="130.0" ry="45.0" fill="#ffffff" stroke="#2f6f9f" stroke-width="2.5"/>
+<text x="1200" y="356.0" font-size="17" font-weight="700" text-anchor="middle">COMPLETE</text>
+<text x="1200" y="376.0" font-size="12" text-anchor="middle" fill="#5b6b7c">note list empty · &#x27;Song Complete!&#x27;</text>
+<rect x="1080.0" y="125.0" width="240" height="70" rx="10" fill="#fdf3f1" stroke="#b5483a" stroke-width="2.5" stroke-dasharray="9 7"/>
+<text x="1200" y="156.0" font-size="17" font-weight="700" text-anchor="middle">filter re-converges?</text>
+<text x="1200" y="176.0" font-size="12" text-anchor="middle" fill="#5b6b7c">Q-10 · untested</text>
+<text x="40" y="670" font-size="13" fill="#5b6b7c">Verified by real events: P pause/resume + label (FRICTIONAL 02:41), R reset (05:51); Song Complete reached in a full-chart capture take (2026-09-15).</text>
+<rect x="930" y="676" width="36" height="18" rx="4" fill="#ffffff" stroke="#2f6f9f" stroke-width="2"/>
+<text x="974" y="690" font-size="13" fill="#5b6b7c">observed in code</text>
+<rect x="1120" y="676" width="36" height="18" rx="4" fill="#fdf3f1" stroke="#b5483a" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="1164" y="690" font-size="13" fill="#5b6b7c">proposed / unverified / missing</text>
+</g></svg>

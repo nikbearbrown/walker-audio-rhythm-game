@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1580" height="720" viewBox="0 0 1580 720" role="img" aria-labelledby="t d">
+<title id="t">Clock pipeline · S-01</title>
+<desc id="d">Audio time is truthful but jittery; system time is smooth but drifts. The 1€ filter smooths their difference. Solid: code. Dashed: what a person hears, never measured. IDs: S-01, M-02, M-03, M-09, F-09.</desc>
+<rect width="1580" height="720" fill="#f7f8fa"/>
+<defs>
+<marker id="ao" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#2f6f9f"/></marker>
+<marker id="ap" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#b5483a"/></marker>
+</defs>
+<g font-family="Helvetica, Arial, sans-serif" fill="#1f2a37">
+<text x="40" y="48" font-size="28" font-weight="700">Clock pipeline · S-01</text>
+<text x="40" y="76" font-size="15" fill="#5b6b7c">Audio time is truthful but jittery; system time is smooth but drifts. The 1€ filter smooths their difference. Solid: code. Dashed: what a person hears, never measured.</text>
+<text x="40" y="98" font-size="13" fill="#5b6b7c">IDs: S-01, M-02, M-03, M-09, F-09</text>
+<path d="M374.4 260.0 L542.4 310.0" fill="none" stroke="#2f6f9f" stroke-width="2.2" marker-end="url(#ao)"/>
+<path d="M374.4 430.0 L542.4 380.0" fill="none" stroke="#2f6f9f" stroke-width="2.2" marker-end="url(#ao)"/>
+<path d="M780.0 345.0 L830.0 345.0" fill="none" stroke="#2f6f9f" stroke-width="2.2" marker-end="url(#ao)"/>
+<path d="M1070.0 345.0 L1090.0 345.0" fill="none" stroke="#2f6f9f" stroke-width="2.2" marker-end="url(#ao)"/>
+<path d="M440.0 207.9 L1110.0 167.3" fill="none" stroke="#2f6f9f" stroke-width="2.2" marker-end="url(#ao)"/>
+<text x="775.0" y="179.6" font-size="13" text-anchor="middle" fill="#5b6b7c" stroke="#f7f8fa" stroke-width="4" paint-order="stroke">smoothing off</text>
+<path d="M1190.7 390.0 L1102.8 525.0" fill="none" stroke="#2f6f9f" stroke-width="2.2" marker-end="url(#ao)"/>
+<path d="M1263.3 195.0 Q1567.0 514.5 1270.0 542.2" fill="none" stroke="#2f6f9f" stroke-width="2.2" marker-end="url(#ao)"/>
+<text x="1480.0" y="365.0" font-size="13" text-anchor="middle" fill="#5b6b7c" stroke="#f7f8fa" stroke-width="4" paint-order="stroke">raw beats</text>
+<path d="M890.0 584.8 L770.0 600.4" fill="none" stroke="#b5483a" stroke-width="2.2" stroke-dasharray="9 7" marker-end="url(#ap)"/>
+<text x="830.0" y="584.6" font-size="13" text-anchor="middle" fill="#5b6b7c" stroke="#f7f8fa" stroke-width="4" paint-order="stroke">?</text>
+<rect x="40.0" y="180.0" width="400" height="80" rx="10" fill="#ffffff" stroke="#2f6f9f" stroke-width="2.5"/>
+<text x="240" y="216.0" font-size="17" font-weight="700" text-anchor="middle">Audio time</text>
+<text x="240" y="236.0" font-size="12" text-anchor="middle" fill="#5b6b7c">playback pos − offset + since-mix − latency · 69-82</text>
+<rect x="40.0" y="430.0" width="400" height="80" rx="10" fill="#ffffff" stroke="#2f6f9f" stroke-width="2.5"/>
+<text x="240" y="466.0" font-size="17" font-weight="700" text-anchor="middle">System time</text>
+<text x="240" y="486.0" font-size="12" text-anchor="middle" fill="#5b6b7c">ticks − start stamp, × pitch · 87-88, 128-139</text>
+<rect x="540.0" y="310.0" width="240" height="70" rx="10" fill="#ffffff" stroke="#2f6f9f" stroke-width="2.5"/>
+<text x="660" y="341.0" font-size="17" font-weight="700" text-anchor="middle">audio − system</text>
+<text x="660" y="361.0" font-size="12" text-anchor="middle" fill="#5b6b7c">_physics_process · 109</text>
+<rect x="830.0" y="310.0" width="240" height="70" rx="10" fill="#ffffff" stroke="#2f6f9f" stroke-width="2.5"/>
+<text x="950" y="341.0" font-size="17" font-weight="700" text-anchor="middle">1€ filter</text>
+<text x="950" y="361.0" font-size="12" text-anchor="middle" fill="#5b6b7c">cutoff 0.1, beta 5 · 60 UPS · 110</text>
+<rect x="1090.0" y="300.0" width="260" height="90" rx="10" fill="#ffffff" stroke="#2f6f9f" stroke-width="2.5"/>
+<text x="1220" y="331.0" font-size="17" font-weight="700" text-anchor="middle">song time = system</text>
+<text x="1220" y="351.0" font-size="17" font-weight="700" text-anchor="middle">+ filtered delta</text>
+<text x="1220" y="371.0" font-size="12" text-anchor="middle" fill="#5b6b7c">get_current_beat · 148-150</text>
+<rect x="1110.0" y="125.0" width="240" height="70" rx="10" fill="#ffffff" stroke="#2f6f9f" stroke-width="2.5"/>
+<text x="1230" y="156.0" font-size="17" font-weight="700" text-anchor="middle">RAW mode</text>
+<text x="1230" y="176.0" font-size="12" text-anchor="middle" fill="#5b6b7c">audio time directly · 153-155</text>
+<rect x="890.0" y="525.0" width="380" height="70" rx="10" fill="#ffffff" stroke="#2f6f9f" stroke-width="2.5"/>
+<text x="1080" y="556.0" font-size="17" font-weight="700" text-anchor="middle">notes · judgments · metronome</text>
+<text x="1080" y="576.0" font-size="12" text-anchor="middle" fill="#5b6b7c">− input latency (note_manager.gd:154)</text>
+<rect x="470.0" y="590.0" width="300" height="60" rx="10" fill="#fdf3f1" stroke="#b5483a" stroke-width="2.5" stroke-dasharray="9 7"/>
+<text x="620" y="616.0" font-size="17" font-weight="700" text-anchor="middle">what the player hears</text>
+<text x="620" y="636.0" font-size="12" text-anchor="middle" fill="#5b6b7c">H-01 · never measured</text>
+<text x="40" y="670" font-size="13" fill="#5b6b7c">Measured (FRICTIONAL 09:33): real CoreAudio, ~5 s, raw −0.76 ms and filtered +2.55 ms vs wall time. Headless Dummy audio drifted ~0.4 s (09:02). Engine clocks, not ears.</text>
+<rect x="1110" y="676" width="36" height="18" rx="4" fill="#ffffff" stroke="#2f6f9f" stroke-width="2"/>
+<text x="1154" y="690" font-size="13" fill="#5b6b7c">observed in code</text>
+<rect x="1300" y="676" width="36" height="18" rx="4" fill="#fdf3f1" stroke="#b5483a" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="1344" y="690" font-size="13" fill="#5b6b7c">proposed / unverified / missing</text>
+</g></svg>

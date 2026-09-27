@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Rhythm game GDD deck</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--bg:#f7f8fa;--ink:#1f2a37;--muted:#5b6b7c;--obs:#2f6f9f;--prop:#b5483a;--card:#ffffff;--rule:#d9dee4;--z:#478cbf}
+html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Helvetica,Arial,sans-serif}
+.slide{display:none;min-height:100vh;box-sizing:border-box;padding:52px 72px;max-width:1400px;margin:0 auto}
+.slide.on{display:block}
+h1{font-size:42px;margin:0 0 10px}h2{font-size:32px;margin:0 0 14px}
+.kicker{color:var(--muted);font-size:15px;letter-spacing:.04em;text-transform:uppercase;margin-bottom:16px}
+p,li{font-size:21px;line-height:1.42}li{margin:7px 0}
+.cap{color:var(--muted);font-size:15px;margin-top:8px}
+img,object{max-width:100%;max-height:62vh;border:1px solid var(--rule);background:#fff;display:block}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:13px;font-weight:700;margin-right:6px;vertical-align:middle}
+.obs{background:#e4eef6;color:var(--obs);border:1.5px solid var(--obs)}
+.inf{background:#eef1f4;color:var(--muted);border:1.5px solid var(--muted)}
+.mis{background:#fdf3f1;color:var(--prop);border:1.5px dashed var(--prop)}
+.dashed{border:2px dashed var(--prop);border-radius:8px;padding:10px 16px;background:#fdf3f1}
+.solid{border:2px solid var(--obs);border-radius:8px;padding:10px 16px;background:#fff}
+table{border-collapse:collapse;font-size:17px;width:100%}td,th{border-bottom:1px solid var(--rule);padding:7px 10px;text-align:left;vertical-align:top}
+.big{font-size:88px;font-weight:700;color:var(--obs);line-height:1}
+nav{position:fixed;bottom:14px;right:22px;color:var(--muted);font-size:14px}
+.zelda{border-left:6px solid var(--z);padding-left:18px}
+a{color:var(--obs)}
+@media(max-width:800px){.slide{padding:24px 16px}.grid{grid-template-columns:1fr}h1{font-size:28px}h2{font-size:23px}p,li{font-size:17px}.big{font-size:54px}}
+</style></head><body>
+<section class="slide on">
+<div class="kicker">walker-audio-rhythm-game · recovered GDD 0.1.0 · 2026-09-27 · Zelda, silent · gate — unsigned at time of writing</div>
+<h1>One button, one lane, zero listeners.</h1>
+<p>The one actual game in this batch: notes fall onto a guide in time with a song; press Space on the beat; the game shows how early or late you were, in milliseconds.</p><p><span class="tag obs">OBSERVED</span> in code or a named doc &nbsp; <span class="tag inf">INFERRED</span> implied &nbsp; <span class="tag mis">MISSING</span> undecided</p><p class="cap">No gate is signed. GAME-BRIEF.md is an unsigned working brief. → <a href="GDD.md">GDD.md</a></p>
+</section>
+<section class="slide">
+<div class="kicker">What exists · §1</div>
+<h2>The upstream picture of it</h2>
+<img src="../godot/screenshots/rhythm_game.webp" alt="Upstream rhythm game screenshot"><p class="cap"><span class="tag inf">UPSTREAM ART</span> godot/screenshots/rhythm_game.webp. Walker's own captures exist in evidence/ but were deliberately not used for this pass.</p>
+</section>
+<section class="slide">
+<div class="kicker">Vision · §1</div>
+<h2>“Teach audio-clock-driven motion.”</h2>
+<div class="solid"><p><span class="tag obs">OBSERVED GAME-BRIEF.md:3-5</span> Teach audio-clock-driven motion through a playable one-button rhythm demo. Preserve upstream chart, visuals and timing; make small evidenced improvements.</p></div><div class="dashed" style="margin-top:16px"><p><span class="tag mis">MISSING</span> player, player fantasy, PX goals, pillars, priorities, and whether it ever grows beyond a demo (Q-01).</p></div>
+</section>
+<section class="slide">
+<div class="kicker">Core loop · §3, S-05</div>
+<h2>Watch, press, read the error, restart</h2>
+<object data="diagrams/session-states.svg" type="image/svg+xml" aria-label="session states"></object>
+</section>
+<section class="slide">
+<div class="kicker">Mechanics · §5 M-02</div>
+<h2>The windows, and the one nobody chose</h2>
+<object data="diagrams/judgment-windows.svg" type="image/svg+xml" aria-label="judgment windows"></object><p class="cap">Press 200 ms early: Miss, note consumed. Press 200 ms late: nothing; the note already left. Q-06.</p>
+</section>
+<section class="slide">
+<div class="kicker">Systems · §6 S-01</div>
+<h2>Two clocks and a filter</h2>
+<object data="diagrams/clock-pipeline.svg" type="image/svg+xml" aria-label="clock pipeline"></object>
+</section>
+<section class="slide">
+<div class="kicker">Evidence · §16</div>
+<h2>Engine-verified, never heard</h2>
+<div class="grid"><div class="solid"><ul><li>Hit windows (fixture), live Space Perfect</li><li>Note motion samples</li><li>Real P pause/resume, real R restart</li><li>CoreAudio clocks within ~3 ms of wall over 5 s</li><li>Full-chart capture take: 150 / 14 / 7, Song Complete</li></ul></div><div class="dashed"><ul><li>Any human listening or play</li><li>Hardware latency calibration</li><li>Late-press behaviour (T-20)</li><li>Metronome units (Q-07)</li><li>Pause re-convergence (Q-10)</li></ul></div></div>
+</section>
+<section class="slide">
+<div class="kicker">Top risks · §14</div>
+<h2>Three that matter</h2>
+<table><tr><th>ID</th><th>Risk</th></tr><tr><td>R-01</td><td>Automated timing presented as heard sync</td></tr><tr><td>R-02</td><td>Music distributed before provenance is settled (Q-08)</td></tr><tr><td>R-07</td><td>Zero human playtests</td></tr></table>
+</section>
+<section class="slide">
+<div class="kicker">Open questions · §15</div>
+<h2>Fourteen questions</h2>
+<table><tr><th>ID</th><th>Question</th></tr><tr><td>Q-01</td><td>Keep this a teaching demo, or grow it into a game (more charts, grades, persistence)?</td></tr><tr><td>Q-02</td><td>Who is the player/learner?</td></tr><tr><td>Q-03</td><td>Player experience goals?</td></tr><tr><td>Q-04</td><td>Pillars and feature priorities?</td></tr><tr><td>Q-05</td><td>Is a score/grade wanted beyond counts and average error? Should misses count in the mean?</td></tr><tr><td>Q-06</td><td>Should a late press (150–300 ms) register as a Miss?</td></tr><tr><td>Q-07</td><td>Is `beat + output_latency_seconds` in the metronome a bug?</td></tr><tr><td>Q-08</td><td>Is the song cleared for distribution?</td></tr><tr><td>Q-09</td><td>How is hardware latency calibrated, and is 20 ms the right default?</td></tr><tr><td>Q-10</td><td>Is note continuity after a long pause acceptable while the filter re-converges?</td></tr><tr><td>Q-11</td><td>Any progression or persistence (best scores, saved settings)?</td></tr><tr><td>Q-12</td><td>Target platforms (desktop only, Web)?</td></tr><tr><td>Q-13</td><td>Confirm world, narrative and characters are out of scope.</td></tr><tr><td>Q-14</td><td>More charts or songs?</td></tr></table>
+</section>
+<section class="slide">
+<div class="kicker">Zelda's read</div>
+<h2>Best-evidenced project here. Still no ears.</h2>
+<div class="zelda"><p>H-01 is cheap and is the only test that answers the brief's own question. Decide the late-miss asymmetry on purpose. Confirm the metronome line before it appears on film as proof of sync. First fix: Q-08, the soundtrack.</p></div><p class="cap"><a href="IMPLEMENTATION-MAP.md">IMPLEMENTATION-MAP.md</a> · <a href="decisions.md">decisions.md</a> · <a href="CHANGELOG.md">CHANGELOG.md</a></p>
+</section>
+
+<nav id="nav"></nav>
+<script>
+(function(){var s=[].slice.call(document.querySelectorAll('.slide')),i=0,n=document.getElementById('nav');
+function show(k){i=Math.max(0,Math.min(s.length-1,k));s.forEach(function(e,j){e.classList.toggle('on',j===i)});n.textContent=(i+1)+' / '+s.length+'  ·  ← → or space';}
+document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();show(i+1)}else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();show(i-1)}else if(e.key==='Home'){show(0)}else if(e.key==='End'){show(s.length-1)}});
+document.addEventListener('click',function(e){if(e.target.closest('a'))return;show(e.clientX>window.innerWidth/2?i+1:i-1)});
+show(0);})();
+</script>
+
+</body></html>

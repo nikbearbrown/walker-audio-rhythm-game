@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/main/main.tscn" id="1_game"]
+
+[node name="CaptureWrapper" type="Node"]
+
+[node name="CaptureViewport" type="SubViewport" parent="."]
+size = Vector2i(3840, 2160)
+size_2d_override = Vector2i(1280, 720)
+size_2d_override_stretch = true
+render_target_update_mode = 4
+
+[node name="Game" parent="CaptureViewport" instance=ExtResource("1_game")]
