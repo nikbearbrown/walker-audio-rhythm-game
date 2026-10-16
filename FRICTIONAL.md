@@ -1,5 +1,17 @@
 # Frictional
 
+2026-09-29 UTC continuation: Both walkthrough and gamedev landscape MP4s exist at
+3840x2160, with SHA-256 hashes matching their `ready` export receipts. The
+walkthrough structural check passes 17 implemented features, 20 evidence
+intervals and three native captures. The development check passes 15 exact
+code excerpts immediately followed by hashed visible results. Inspected the
+actual gamedev master contact sheet, the walkthrough capture contact sheet and
+their written event-sequence/visual reports; automated Gate V/T reports have
+no blockers. These are machine and visual checks, not a listening or human
+playtest. Heard song-to-note synchronization and complete audio-transition
+review remain open. The series queue is corrected from stale `import-passed` to
+`film-production`; neither film is declared human-approved or review-ready.
+
 2026-09-14 UTC: Created a separate copy without changing upstream or the framework.
 Renamed the project only. Source audit flagged a possible empty-note indexing
 edge case and a possible metronome units mismatch; neither is runtime confirmed.
